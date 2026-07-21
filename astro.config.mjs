@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 import mdx from '@astrojs/mdx';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
@@ -17,5 +19,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [mdx({ optimize: true })],
+  integrations: [mdx({ optimize: true }), react()],
 });
