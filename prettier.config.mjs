@@ -10,7 +10,9 @@ export default {
   arrowParens: 'always',
   endOfLine: 'lf',
 
-  plugins: ['prettier-plugin-astro'],
+  tailwindStylesheet: './src/styles/global.css',
+
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
 
   overrides: [{ files: '*.astro', options: { parser: 'astro' } }],
 };
