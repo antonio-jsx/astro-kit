@@ -4,5 +4,6 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "prettier.documentSelectors": ["**/*.astro", "**/*.ts"]
+  "prettier.documentSelectors": ["**/*.astro", "**/*.ts"],
+  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"]
 }
