@@ -1,25 +1,75 @@
 # Astro Kit
 
-## 🚀 Project Structure
+`astro-kit` es un proyecto base de Astro para crear webs con:
 
-Astro looks for `.astro` or `.md` or `.mdx` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- Astro 7
+- React 19
+- Tailwind CSS 4
+- MDX
+- Node.js standalone server
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📌 Características
 
-Any static assets, like images, can be placed in the `public/` directory.
+- `src/pages/[...slug].astro`: renderiza contenido dinámico desde `src/contents/`.
+- `src/content.config.ts`: define la colección `contents` para archivos Markdown y MDX.
+- `astro.config.mjs`: salida de servidor con `@astrojs/node`, integración de React y MDX, y plugin Tailwind CSS.
 
-Place any static pages in the `src/contents` directory. Each page is exposed as a route based on its file name. (más directa, típica de documentación)
+## 🗂️ Estructura principal
 
-## 🧞 Commands
+- `src/pages/` — rutas de la aplicación.
+- `src/contents/` — contenido Markdown renderizado en rutas dinámicas.
+- `src/components/` — componentes reutilizables.
+- `public/` — activos estáticos.
 
-All commands are run from the root of the project, from a terminal:
+## 🚀 Uso
 
-| Command          | Action                                           |
-| :--------------- | :----------------------------------------------- |
-| `pnpm install`   | Installs dependencies                            |
-| `pnpm dev`       | Starts local dev server at `localhost:4321`      |
-| `pnpm build`     | Build your production site to `./dist/`          |
-| `pnpm preview`   | Preview your build locally, before deploying     |
-| `pnpm astro ...` | Run CLI commands like `astro add`, `astro check` |
-| `pnpm lint`      | Check error with eslint                          |
-| `pnpm format`    | Clean code with prettier and eslint fix          |
+Desde la raíz del proyecto:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Luego abre `http://localhost:3000`.
+
+## 🧪 Scripts disponibles
+
+| Comando          | Acción                                               |
+| :--------------- | :--------------------------------------------------- |
+| `pnpm install`   | Instala las dependencias                             |
+| `pnpm dev`       | Inicia el servidor de desarrollo en `localhost:3000` |
+| `pnpm build`     | Genera la versión de producción                      |
+| `pnpm preview`   | Previsualiza el build local                          |
+| `pnpm astro ...` | Ejecuta comandos CLI de Astro                        |
+| `pnpm lint`      | Ejecuta ESLint sobre `src/`                          |
+| `pnpm lint:fix`  | Ejecuta ESLint y corrige problemas automáticos       |
+| `pnpm format`    | Formatea el proyecto con Prettier y aplica ESLint    |
+
+## 📄 Añadir contenido
+
+Para crear una nueva página de contenido:
+
+1. Crea un archivo `.md` o `.mdx` dentro de `src/contents/`.
+2. Añade frontmatter con al menos `title`.
+3. Usa la ruta basada en el nombre del archivo.
+
+Ejemplo:
+
+```md
+---
+title: Mi página de prueba
+---
+
+Contenido de ejemplo.
+```
+
+Accede a la página en `http://localhost:3000/mi-pagina-de-prueba`.
+
+## 🧩 Requisitos
+
+- Node.js >= 22.12.0
+- `pnpm`
+
+## 💡 Notas
+
+- La salida está configurada como servidor Node standalone.
