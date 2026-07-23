@@ -7,19 +7,17 @@
 - Tailwind CSS 4
 - MDX
 - Node.js standalone server
+- Autenticación con `better-auth`
 
 ## 📌 Características
 
+- `astro.config.mjs`: salida de servidor con `@astrojs/node`, integración de React y MDX, y plugin Tailwind CSS.
 - `src/pages/[...slug].astro`: renderiza contenido dinámico desde `src/contents/`.
 - `src/content.config.ts`: define la colección `contents` para archivos Markdown y MDX.
-- `astro.config.mjs`: salida de servidor con `@astrojs/node`, integración de React y MDX, y plugin Tailwind CSS.
-
-## 🗂️ Estructura principal
-
-- `src/pages/` — rutas de la aplicación.
-- `src/contents/` — contenido Markdown renderizado en rutas dinámicas.
-- `src/components/` — componentes reutilizables.
-- `public/` — activos estáticos.
+- `src/pages/api/auth/[...all].ts`: expone la API de autenticación para `better-auth`.
+- `src/lib/auth.ts`: configura `better-auth` traducciones en español.
+- `src/lib/auth-client.ts`: cliente para React que consume la sesión de usuario.
+- `src/middleware.ts`: protege la ruta `/dashboard` y agrega `user` y `session` a `Astro.locals`.
 
 ## 🚀 Uso
 
@@ -44,6 +42,10 @@ Luego abre `http://localhost:3000`.
 | `pnpm lint`      | Ejecuta ESLint sobre `src/`                          |
 | `pnpm lint:fix`  | Ejecuta ESLint y corrige problemas automáticos       |
 | `pnpm format`    | Formatea el proyecto con Prettier y aplica ESLint    |
+
+## 🔐 Autenticación
+
+- La ruta `/dashboard` sólo es accesible si el usuario tiene sesión activa.
 
 ## 📄 Añadir contenido
 
@@ -72,4 +74,5 @@ Accede a la página en `http://localhost:3000/mi-pagina-de-prueba`.
 
 ## 💡 Notas
 
-- La salida está configurada como servidor Node standalone.
+- La base de datos SQLite local `auth.db` debe ignorarse en el control de versiones; `.gitignore` incluye `*.db`.
+- `better-sqlite3` requiere herramientas de compilación nativas en el entorno donde se ejecuta `pnpm install`.
