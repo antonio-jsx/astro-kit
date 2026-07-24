@@ -19,6 +19,11 @@
 - `src/lib/auth-client.ts`: cliente para React que consume la sesión de usuario.
 - `src/middleware.ts`: protege la ruta `/dashboard` y agrega `user` y `session` a `Astro.locals`.
 
+## 🧩 Requisitos
+
+- Node.js >= 22.12.0
+- `pnpm`
+
 ## 🚀 Uso
 
 Desde la raíz del proyecto:
@@ -67,12 +72,26 @@ Contenido de ejemplo.
 
 Accede a la página en `http://localhost:3000/mi-pagina-de-prueba`.
 
-## 🧩 Requisitos
+## 🔍 SEO y Sitemap
 
-- Node.js >= 22.12.0
-- `pnpm`
+El kit incluye soporte automático para SEO y generación de sitemap:
+
+- **`@astrojs/sitemap`**: genera automáticamente `sitemap-index.xml` con todas tus páginas y contenido.
+- **`astro-seo`**: componente `SEO` en `src/layouts/Base.astro` para gestionar meta tags, títulos y descripciones.
+- **`robots.txt`**: generado dinámicamente en `src/pages/robots.txt.ts` para indicar a los buscadores dónde está el sitemap.
 
 ## 💡 Notas
 
 - La base de datos SQLite local `auth.db` debe ignorarse en el control de versiones; `.gitignore` incluye `*.db`.
 - `better-sqlite3` requiere herramientas de compilación nativas en el entorno donde se ejecuta `pnpm install`.
+- El sitemap se genera automáticamente basándose en la URL del sitio. Para especificar una URL personalizada, configura la variable de entorno:
+
+```bash
+SITE_URL=https://tu-dominio.com
+```
+
+En `astro.config.mjs`:
+
+```javascript
+site: process.env.SITE_URL || 'http://localhost:3000',
+```

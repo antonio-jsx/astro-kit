@@ -1,0 +1,32 @@
+---
+import { SEO } from 'astro-seo';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <SEO
+      charset="utf-8"
+      description={description}
+      extend={{
+        link: [
+          { rel: 'icon', href: '/favicon.ico' },
+          { rel: 'image/svg+xml', href: '/favicon.svg' },
+        ],
+        meta: [{ name: 'viewport', content: 'width=device-width' }],
+      }}
+      title={title}
+      titleTemplate="%s - <Name>"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
