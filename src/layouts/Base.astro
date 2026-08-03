@@ -1,18 +1,16 @@
 ---
-import { SEO } from 'astro-seo';
+import { SEO, type SEOProps } from 'astro-seo';
 import '../styles/global.css';
 
-interface Props {
-  title: string;
-  description?: string;
-}
+type Props = SEOProps;
 
-const { title, description } = Astro.props;
+const { title, description, ...props } = Astro.props;
 ---
 
 <html lang="es">
   <head>
     <SEO
+      {...props}
       charset="utf-8"
       description={description}
       extend={{
