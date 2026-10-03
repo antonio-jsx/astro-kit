@@ -12,6 +12,7 @@ export const auth = betterAuth({
       joins: true,
     },
   },
+  trustedOrigins: [env.CORS_ORIGIN],
   baseURL: {
     allowedHosts: [env.BETTER_AUTH_URL],
     protocol: env.NODE_ENV === 'development' ? 'http' : 'https',
