@@ -22,31 +22,31 @@
 ## 🧩 Requisitos
 
 - Node.js >= 22.12.0
-- `pnpm`
+- `bun`
 
 ## 🚀 Uso
 
 Desde la raíz del proyecto:
 
 ```bash
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
 Luego abre `http://localhost:3000`.
 
 ## 🧪 Scripts disponibles
 
-| Comando          | Acción                                               |
-| :--------------- | :--------------------------------------------------- |
-| `pnpm install`   | Instala las dependencias                             |
-| `pnpm dev`       | Inicia el servidor de desarrollo en `localhost:3000` |
-| `pnpm build`     | Genera la versión de producción                      |
-| `pnpm preview`   | Previsualiza el build local                          |
-| `pnpm astro ...` | Ejecuta comandos CLI de Astro                        |
-| `pnpm lint`      | Ejecuta ESLint sobre `src/`                          |
-| `pnpm lint:fix`  | Ejecuta ESLint y corrige problemas automáticos       |
-| `pnpm format`    | Formatea el proyecto con Prettier y aplica ESLint    |
+| Comando             | Acción                                               |
+| :------------------ | :--------------------------------------------------- |
+| `bun install`       | Instala las dependencias                             |
+| `bun run dev`       | Inicia el servidor de desarrollo en `localhost:3000` |
+| `bun run build`     | Genera la versión de producción                      |
+| `bun run preview`   | Previsualiza el build local                          |
+| `bun run astro ...` | Ejecuta comandos CLI de Astro                        |
+| `bun run lint`      | Ejecuta ESLint sobre `src/`                          |
+| `bun run lint:fix`  | Ejecuta ESLint y corrige problemas automáticos       |
+| `bun run format`    | Formatea el proyecto con Prettier y aplica ESLint    |
 
 ## 🔐 Autenticación
 
@@ -83,7 +83,7 @@ El kit incluye soporte automático para SEO y generación de sitemap:
 ## 💡 Notas
 
 - La base de datos SQLite local `auth.db` debe ignorarse en el control de versiones; `.gitignore` incluye `*.db`.
-- `better-sqlite3` requiere herramientas de compilación nativas en el entorno donde se ejecuta `pnpm install`.
+- `better-sqlite3` requiere herramientas de compilación nativas en el entorno donde se ejecuta `bun install`.
 - El sitemap se genera automáticamente basándose en la URL del sitio. Para especificar una URL personalizada, configura la variable de entorno:
 
 ```bash
