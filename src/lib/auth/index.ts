@@ -1,7 +1,7 @@
 import { i18n, locales } from '@better-auth/i18n';
 import { betterAuth } from 'better-auth';
 import Database from 'better-sqlite3';
-import { env } from './env/server';
+import { env } from '../env/server';
 
 const database = new Database('auth.db');
 
