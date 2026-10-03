@@ -8,8 +8,8 @@ export const auth = betterAuth({
   database: database,
   advanced: {
     database: {
-      joins: true
-    }
+      joins: true,
+    },
   },
   baseURL: {
     allowedHosts: ['localhost:*'],
