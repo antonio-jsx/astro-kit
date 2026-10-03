@@ -1,6 +1,7 @@
 import { i18n, locales } from '@better-auth/i18n';
 import { betterAuth } from 'better-auth';
 import Database from 'better-sqlite3';
+import { env } from './env/server';
 
 const database = new Database('auth.db');
 
@@ -12,8 +13,8 @@ export const auth = betterAuth({
     },
   },
   baseURL: {
-    allowedHosts: ['localhost:*'],
-    protocol: process.env.NODE_ENV === 'development' ? 'http' : 'https',
+    allowedHosts: [env.BETTER_AUTH_URL],
+    protocol: env.NODE_ENV === 'development' ? 'http' : 'https',
   },
   emailAndPassword: { enabled: true },
   session: {
