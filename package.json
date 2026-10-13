@@ -59,6 +59,7 @@
     "drizzle-kit": "^0.31.11",
     "eslint": "10.12.0",
     "eslint-plugin-astro": "3.2.1",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-unused-imports": "4.4.1",
     "globals": "17.7.0",
     "prettier": "3.9.10",

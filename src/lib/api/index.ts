@@ -1,7 +1,8 @@
 import { Hono } from 'hono';
-import { env } from '@/lib/env/server';
 import { cors } from 'hono/cors';
+
 import { auth } from '@/lib/auth';
+import { env } from '@/lib/env/server';
 
 const app = new Hono();
 

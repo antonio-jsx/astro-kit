@@ -1,11 +1,12 @@
 import js from '@eslint/js';
+import react from '@eslint-react/eslint-plugin';
+import * as astroParser from 'astro-eslint-parser';
+import { defineConfig } from 'eslint/config';
+import astro from 'eslint-plugin-astro';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import { defineConfig } from 'eslint/config';
-import react from '@eslint-react/eslint-plugin';
-import astro from 'eslint-plugin-astro';
-import * as astroParser from 'astro-eslint-parser';
-import unusedImports from 'eslint-plugin-unused-imports';
 
 export default defineConfig([
   js.configs.recommended,
@@ -48,6 +49,7 @@ export default defineConfig([
   {
     plugins: {
       'unused-imports': unusedImports,
+      'simple-import-sort': simpleImportSort,
     },
 
     rules: {
@@ -64,6 +66,7 @@ export default defineConfig([
           argsIgnorePattern: '^_',
         },
       ],
+      'simple-import-sort/imports': 'error',
     },
   },
 ]);
